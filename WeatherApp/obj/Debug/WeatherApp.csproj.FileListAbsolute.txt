@@ -1,0 +1,10 @@
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\bin\Debug\WeatherApp.exe.config
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\bin\Debug\WeatherApp.exe
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\bin\Debug\WeatherApp.pdb
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csprojResolveAssemblyReference.cache
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\obj\Debug\WeatherApp.Form1.resources
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\obj\Debug\WeatherApp.Properties.Resources.resources
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csproj.GenerateResource.Cache
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csproj.CoreCompileInputs.cache
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\obj\Debug\WeatherApp.exe
+C:\Users\Dominik\Desktop\WeatherApp\WeatherApp\obj\Debug\WeatherApp.pdb
