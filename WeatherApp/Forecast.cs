@@ -18,15 +18,15 @@ namespace WeatherApp
     {
         public double dt { get; set; }
         public city city { get; set; }
-        public main main { get; set; }
+        public temp temp { get; set; }
     }
 
 
-    public class main
+    public class temp
     {
-        public double temp { get; set; }
+        public double day { get; set; }
 
-        public int humidity { get; set; }
+        
     }
 
     public class city
