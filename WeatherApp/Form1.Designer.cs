@@ -73,7 +73,6 @@
             this.label1.Size = new System.Drawing.Size(233, 67);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kraków";
-            
             // 
             // label2
             // 
@@ -87,7 +86,6 @@
             this.label2.Size = new System.Drawing.Size(126, 39);
             this.label2.TabIndex = 1;
             this.label2.Text = "Polska";
-            
             // 
             // label3
             // 
@@ -119,12 +117,13 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.Location = new System.Drawing.Point(16, 11);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 54);
             this.button1.TabIndex = 10;
             this.button1.Text = "Odśwież";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -138,7 +137,6 @@
             this.label5.Size = new System.Drawing.Size(239, 164);
             this.label5.TabIndex = 11;
             this.label5.Text = "2 C";
-            
             // 
             // directorySearcher1
             // 
@@ -320,7 +318,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WeatherApp.Properties.Resources.rain3;
             this.pictureBox2.Location = new System.Drawing.Point(217, 590);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(175, 164);
             this.pictureBox2.TabIndex = 7;
@@ -331,7 +329,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::WeatherApp.Properties.Resources.rain3;
             this.pictureBox5.Location = new System.Drawing.Point(1295, 590);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(175, 164);
             this.pictureBox5.TabIndex = 6;
@@ -342,7 +340,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::WeatherApp.Properties.Resources.rain3;
             this.pictureBox4.Location = new System.Drawing.Point(941, 590);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(175, 164);
             this.pictureBox4.TabIndex = 5;
@@ -353,7 +351,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::WeatherApp.Properties.Resources.rain3;
             this.pictureBox3.Location = new System.Drawing.Point(583, 590);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(175, 164);
             this.pictureBox3.TabIndex = 4;
@@ -364,7 +362,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::WeatherApp.Properties.Resources.rainBig;
             this.pictureBox1.Location = new System.Drawing.Point(295, 111);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(347, 316);
             this.pictureBox1.TabIndex = 2;
@@ -401,7 +399,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "WeatherApp";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
