@@ -24,55 +24,44 @@ namespace WeatherApp
             getWeather("Krakow");
 	 	}
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         void getWeather(string city)
         {
             WebClient web = new WebClient();
-            string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}",city,API_KEY);
+            string url = string.Format("https://api.openweathermap.org/data/2.5/forecast?q={0}&units=metric&appid={1}", city,API_KEY);
             var json = web.DownloadString(url);
-            var result = JsonConvert.DeserializeObject<root>(json);
-            root output = result;
+            var result = JsonConvert.DeserializeObject<Forecast>(json);
+            Forecast output = result;
 
-            label1.Text = string.Format("{0}",output.name);
-            label5.Text = string.Format("{0}\u2103", output.main.temperature);
-            label6.Text = string.Format("Wilgotność: {0}%", output.main.humidity);
-            label2.Text = string.Format("{0}", output.sys.country);
-            
+            label1.Text = string.Format("{0}",output.city.name);
+            label5.Text = string.Format("{0}\u2103", output.list[0].main.temp);
+            label6.Text = string.Format("Wilgotność: {0}%", output.list[0].main.humidity);
+            label2.Text = string.Format("{0}", output.city.country);
+
+            label7.Text = string.Format("{0}", output.city.name);
+            label9.Text = string.Format("{0}\u2103", output.list[1].main.temp);
+
+            label12.Text = string.Format("{0}", output.city.name);
+            label10.Text = string.Format("{0}\u2103", output.list[2].main.temp);
+
+            label15.Text = string.Format("{0}", output.city.name);
+            label13.Text = string.Format("{0}\u2103", output.list[3].main.temp);
+
+            label18.Text = string.Format("{0}", output.city.name);
+            label16.Text = string.Format("{0}\u2103", output.list[0].main.temp);
 
 
         }
+
+        
 
         
     }
 
 
 
-    public class main {
-
-        public int temperature{get;set;}
-        public int humidity{get;set;}
-    }
-
-    public class root
-    {
-        public string name { get; set; }
-        public main main { get; set; }
-        public sys sys { get; set; }
-    }
-
-    public class sys
-    {
-        public string country { get; set; }
-    }
+    
 
 
 
