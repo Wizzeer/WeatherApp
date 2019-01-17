@@ -24,7 +24,10 @@ namespace WeatherApp
 			InitializeComponent();
             getWeather("Krakow");
             getForecast("Krakow");
-	 	}
+			timer1.Tick += new EventHandler(this.timer1_Tick);
+			timer1.Start();
+		}
+
 
         void getWeather(string city)
         {
@@ -34,8 +37,10 @@ namespace WeatherApp
             var result = JsonConvert.DeserializeObject<Weather>(json);
             Weather output = result;
 
-            label1.Text = string.Format("{0}", output.name);
-            label5.Text = string.Format("{0}\u2103", output.main.temp);
+			label3.Text = string.Format(DateTime.Now.ToString("HH:mm"));
+			label4.Text = string.Format(DateTime.Now.ToString("dd/MM/yyyy"));
+			label1.Text = string.Format("{0}", output.name);
+            label5.Text = string.Format("{0}\u00B0C", Math.Round(output.main.temp));
             label6.Text = string.Format("Wilgotność: {0}%", output.main.humidity);
             label2.Text = string.Format("{0}", output.sys.country);
 
@@ -51,28 +56,40 @@ namespace WeatherApp
             var result = JsonConvert.DeserializeObject<Forecast>(json);
             Forecast output = result;
 
+			label8.Text = string.Format(DateTime.Now.AddDays(1).ToString("dd/MM/yyyy"));
+			label11.Text = string.Format(DateTime.Now.AddDays(2).ToString("dd/MM/yyyy"));
+			label14.Text = string.Format(DateTime.Now.AddDays(3).ToString("dd/MM/yyyy"));
+			label17.Text = string.Format(DateTime.Now.AddDays(4).ToString("dd/MM/yyyy"));
 
-            label7.Text = string.Format("{0}", output.city.name);
-            label9.Text = string.Format("{0}\u2103", output.list[1].temp.day);
+			label7.Text = string.Format("{0}", output.city.name);
+            label9.Text = string.Format("{0}\u00B0C", Math.Round(output.list[1].temp.day));
 
             label12.Text = string.Format("{0}", output.city.name);
-            label10.Text = string.Format("{0}\u2103", output.list[2].temp.day);
+            label10.Text = string.Format("{0}\u00B0C", Math.Round(output.list[2].temp.day));
 
             label15.Text = string.Format("{0}", output.city.name);
-            label13.Text = string.Format("{0}\u2103", output.list[3].temp.day);
+            label13.Text = string.Format("{0}\u00B0C", Math.Round(output.list[3].temp.day));
 
             label18.Text = string.Format("{0}", output.city.name);
-            label16.Text = string.Format("{0}\u2103", output.list[4].temp.day);
+            label16.Text = string.Format("{0}\u00B0C", Math.Round(output.list[4].temp.day));
 
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            getForecast("Krakow");
+			
+			getForecast("Krakow");
             getWeather("Krakow");
         }
-    }
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			label3.Text = DateTime.Now.ToString("HH:mm");
+			label4.Text = string.Format(DateTime.Now.ToString("dd/MM/yyyy"));
+		}
+
+	}
 
 
 
