@@ -26,6 +26,7 @@ namespace WeatherApp
             getForecast("Krakow");
 			timer1.Tick += new EventHandler(this.timer1_Tick);
 			timer1.Start();
+			
 		}
 
 
@@ -37,6 +38,7 @@ namespace WeatherApp
             var result = JsonConvert.DeserializeObject<Weather>(json);
             Weather output = result;
 
+			setCurrentWeatherIcon(output);
 			label3.Text = string.Format(DateTime.Now.ToString("HH:mm"));
 			label4.Text = string.Format(DateTime.Now.ToString("dd/MM/yyyy"));
 			label1.Text = string.Format("{0}", output.name);
@@ -44,7 +46,6 @@ namespace WeatherApp
             label6.Text = string.Format("Wilgotność: {0}%", output.main.humidity);
             label2.Text = string.Format("{0}", output.sys.country);
 
-            
 
         }
 
@@ -89,11 +90,77 @@ namespace WeatherApp
 			label4.Text = string.Format(DateTime.Now.ToString("dd/MM/yyyy"));
 		}
 
+		private void setCurrentWeatherIcon(Weather json)
+		{
+			checkIfCloudly(json);
+			checkIfSnowy(json);
+			checkIfSunny(json);
+			checkIfFewClouds(json);
+			checkIfRainy(json);
+			checkIfFog(json);
+			checkIfThunder(json);
+		}
+
+		private void checkIfSunny(Weather json)
+		{
+			if (json.weather[0].id == 800)
+			{
+				pictureBox1.Image = WeatherApp.Properties.Resources.sun;
+			}
+		}
+
+		private void checkIfCloudly(Weather json)
+		{
+			if (json.weather[0].id > 801)
+			{
+				pictureBox1.Image = WeatherApp.Properties.Resources.clouds;
+			}
+		}
+
+		private void checkIfFewClouds(Weather json)
+		{
+			if (json.weather[0].id == 801)
+			{
+				pictureBox1.Image = WeatherApp.Properties.Resources.fewclouds;
+			}
+		}
+
+		private void checkIfRainy(Weather json)
+		{
+			if (json.weather[0].id >= 300 && json.weather[0].id <= 531)
+			{
+				pictureBox1.Image = WeatherApp.Properties.Resources.rainBig;
+			}
+		}
+
+		private void checkIfThunder(Weather json)
+		{
+			if (json.weather[0].id >= 200 && json.weather[0].id <= 232)
+			{
+				pictureBox1.Image = WeatherApp.Properties.Resources.flash;
+			}
+		}
+
+		private void checkIfFog(Weather json)
+		{
+			if (json.weather[0].id >= 701 && json.weather[0].id <= 781)
+			{
+				pictureBox1.Image = WeatherApp.Properties.Resources.wave;
+			}
+		}
+
+		private void checkIfSnowy(Weather json)
+		{
+			if (json.weather[0].id >= 600 && json.weather[0].id <= 622)
+			{
+				pictureBox1.Image = WeatherApp.Properties.Resources.snow;
+			}
+		}
 	}
 
+	
 
 
-    
 
 
 

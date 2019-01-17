@@ -382,6 +382,7 @@
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
+			this.DoubleBuffered = true;
 			this.Name = "Form1";
 			this.Text = "WeatherApp";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

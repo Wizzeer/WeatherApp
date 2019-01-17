@@ -14,9 +14,9 @@ namespace WeatherApp
 
         public sys sys { get; set; }
 
+		public List<weather> weather { get; set; }
 
-        
-    }
+	}
 
     public class main
     {
@@ -24,6 +24,11 @@ namespace WeatherApp
         public double humidity { get; set; }
 
     }
+
+	public class weather
+	{
+		public int id { get; set; }
+	}
 
     public class sys
     {
